@@ -1,7 +1,7 @@
 from telegram import Update, InputFile
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+TOKEN = '7486422626:AAHEPueA_bmTzXYYrb_xdgaPIiYfk5KfGso'
 
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Send me a song to play.')
