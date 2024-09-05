@@ -1,29 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    text-align: center;
     background-color: #f0f0f0;
 }
 
 .record {
-    width: 300px;
-    height: 300px;
-    background: url('images/record.jpg') no-repeat center;
+    width: 200px;
+    height: 200px;
+    background: url('images/record.jpg') no-repeat center center;
     background-size: cover;
     border-radius: 50%;
-    animation: spin 0s linear infinite;
+    margin: 20px auto;
+    position: relative;
+    animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.playing {
-    animation: spin 3s linear infinite;
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .controls {
@@ -31,7 +25,8 @@ body {
 }
 
 button {
-    margin: 0 10px;
-    padding: 10px 20px;
+    margin: 5px;
+    padding: 10px;
     font-size: 16px;
+    cursor: pointer;
 }
