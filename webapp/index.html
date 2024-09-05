@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Record Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="record" id="record"></div>
+    <div class="controls">
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+        <input type="file" id="audioFile" accept="audio/*" onchange="loadFile(event)">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
