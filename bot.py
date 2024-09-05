@@ -1,20 +1,19 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
-from telegram.ext import Updater, CommandHandler, CallbackContext
+from telegram.ext import Application, CommandHandler, ContextTypes
 
 TOKEN = '7486422626:AAHEPueA_bmTzXYYrb_xdgaPIiYfk5KfGso'
 
-def start(update: Update, context: CallbackContext) -> None:
-    keyboard = [[InlineKeyboardButton("Open Music Player", web_app=WebAppInfo(url="https://your-domain.com/webapp/index.html"))]]
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    keyboard = [[InlineKeyboardButton("Open Music Player", web_app=WebAppInfo(url="https://mikail133.github.io/telegram-music-bot/"))]]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    update.message.reply_text("Click the button to open the music player.", reply_markup=reply_markup)
+    await update.message.reply_text("Click the button to open the music player.", reply_markup=reply_markup)
 
 def main() -> None:
-    updater = Updater(TOKEN)
-    dp = updater.dispatcher
-    dp.add_handler(CommandHandler("start", start))
-    
-    updater.start_polling()
-    updater.idle()
+    application = Application.builder().token(TOKEN).build()
+
+    application.add_handler(CommandHandler("start", start))
+
+    application.run_polling()
 
 if __name__ == '__main__':
     main()
