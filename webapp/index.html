@@ -9,15 +9,15 @@
 <body>
     <div class="player">
         <div class="record-container">
-            <img src="images/record.jpg" alt="Record" class="record" id="record">
+            <img src="images/plast.jpg" alt="Record" class="record" id="record">
         </div>
         <div class="controls">
-            <button onclick="play()">Play</button>
-            <button onclick="pause()">Pause</button>
-            <button onclick="stop()">Stop</button>
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()">Pause</button>
+            <button onclick="stopAudio()">Stop</button>
             <label for="speed">Speed:</label>
             <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1" onchange="changeSpeed(this.value)">
-            <input type="file" id="audioFile" accept="audio/*" onchange="loadFile(event)">
+            <input type="file" id="audioFile" accept="audio/*" onchange="loadAudioFile(event)">
         </div>
     </div>
     <script src="script.js"></script>
