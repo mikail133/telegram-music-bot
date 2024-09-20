@@ -1,0 +1,21 @@
+{
+  "name": "nota",
+  "version": "1.0.0",
+  "description": "playlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "Не предоставлена"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://mikail133.github.io/telegram-music-bot/"
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "mikail",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}

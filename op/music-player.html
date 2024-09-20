@@ -1,0 +1,27 @@
+<!-- music-player.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Player</title>
+  </head>
+  <body>
+    <h1>Music Player</h1>
+    <button id="start-button">Start</button>
+    <button id="stop-button">Stop</button>
+    <audio id="audio" src=""></audio>
+
+    <script>
+      const startButton = document.getElementById('start-button');
+      const stopButton = document.getElementById('stop-button');
+      const audio = document.getElementById('audio');
+
+      startButton.addEventListener('click', () => {
+        audio.play();
+      });
+
+      stopButton.addEventListener('click', () => {
+        audio.pause();
+      });
+    </script>
+  </body>
+</html>
