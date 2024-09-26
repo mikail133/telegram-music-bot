@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вращающаяся пластинка</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f1cfff; /* Фон страницы фиолетовый */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .vinyl-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            margin-bottom: 20px;
+        }
+
+        .vinyl {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: url('record.webp'); /* Используется ваше изображение */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: spin 0s linear infinite; /* По умолчанию анимация не вращается */
+            transition: animation-duration 1.5s ease; /* Плавное изменение скорости */
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinning {
+            animation-duration: 3s; /* Скорость вращения 3 секунды */
+        }
+
+        /* Стиль кнопки */
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="vinyl-container">
+    <div class="vinyl" id="vinyl"></div>
+</div>
+
+<!-- Кнопка старт/стоп -->
+<button id="controlButton">Старт</button>
+
+<script>
+    const vinyl = document.getElementById('vinyl');
+    const controlButton = document.getElementById('controlButton');
+    let isSpinning = false;
+
+    // Функция для обновления состояния пластинки и кнопки
+    function toggleVinyl() {
+        if (isSpinning) {
+            vinyl.style.animationPlayState = 'paused'; // Плавная остановка
+            controlButton.textContent = 'Старт'; // Изменить текст кнопки на "Старт"
+        } else {
+            vinyl.style.animationPlayState = 'running'; // Плавное начало вращения
+            vinyl.classList.add('spinning');
+            controlButton.textContent = 'Стоп'; // Изменить текст кнопки на "Стоп"
+        }
+        isSpinning = !isSpinning; // Меняем состояние вращения
+    }
+
+    // Обработчик для кнопки
+    controlButton.addEventListener('click', toggleVinyl);
+</script>
+
+</body>
+</html>
 
