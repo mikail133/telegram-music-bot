@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f1cfff; /* Фон страницы фиолетовый */
+            background-color: #f1cfff;
             font-family: 'Arial', sans-serif;
         }
 
@@ -27,12 +27,12 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background-image: url('record.webp'); /* Используется ваше изображение */
+            background-image: url('record.webp');
             background-size: cover;
             background-position: center;
             position: relative;
-            animation: spin 0s linear infinite; /* По умолчанию анимация не вращается */
-            transition: animation-duration 1.5s ease; /* Плавное изменение скорости */
+            animation: spin 0s linear infinite;
+            transition: animation-duration 1.5s ease;
         }
 
         @keyframes spin {
@@ -41,10 +41,9 @@
         }
 
         .spinning {
-            animation-duration: 3s; /* Скорость вращения 3 секунды */
+            animation-duration: 3s;
         }
 
-        /* Стиль кнопки */
         button {
             padding: 10px 20px;
             font-size: 18px;
@@ -67,7 +66,6 @@
     <div class="vinyl" id="vinyl"></div>
 </div>
 
-<!-- Кнопка старт/стоп -->
 <button id="controlButton">Старт</button>
 
 <script>
@@ -75,23 +73,20 @@
     const controlButton = document.getElementById('controlButton');
     let isSpinning = false;
 
-    // Функция для обновления состояния пластинки и кнопки
     function toggleVinyl() {
         if (isSpinning) {
-            vinyl.style.animationPlayState = 'paused'; // Плавная остановка
-            controlButton.textContent = 'Старт'; // Изменить текст кнопки на "Старт"
+            vinyl.style.animationPlayState = 'paused';
+            controlButton.textContent = 'Старт';
         } else {
-            vinyl.style.animationPlayState = 'running'; // Плавное начало вращения
+            vinyl.style.animationPlayState = 'running';
             vinyl.classList.add('spinning');
-            controlButton.textContent = 'Стоп'; // Изменить текст кнопки на "Стоп"
+            controlButton.textContent = 'Стоп';
         }
-        isSpinning = !isSpinning; // Меняем состояние вращения
+        isSpinning = !isSpinning;
     }
 
-    // Обработчик для кнопки
     controlButton.addEventListener('click', toggleVinyl);
 </script>
 
 </body>
 </html>
-
